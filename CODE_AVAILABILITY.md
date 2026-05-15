@@ -19,7 +19,3 @@ Participant-level Human Phenotype Project data are not publicly redistributed th
 
 - https://knowledgebase.pheno.ai
 - https://humanphenotypeproject.org
-
-Suggested wording:
-
-> Code availability: Custom code used for preprocessing, covariate adjustment, multimodal integration, and figure generation is available in the study GitHub repository. Participant-level Human Phenotype Project data are controlled-access and can be requested through the official HPP / Pheno.AI Trusted Research Environment.
