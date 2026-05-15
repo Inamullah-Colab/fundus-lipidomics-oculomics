@@ -31,17 +31,9 @@ Participant-level retinal measurements are prepared from HPP exports, including 
 ### 2. Covariate-adjusted retinal analysis
 
 Fundus traits are tested against age while adjusting for sex using partial Pearson correlation, followed by FDR correction and visual summary panels.
-
-
-![Preview of age- and sex-adjusted fundus figure](preview_images/Fig_1_age_sex_fundus.png)
-
 ### 3. Fundus-lipid integration
 
 Fundus and lipidomics features are merged on participant identifier, tested using age/sex-adjusted partial correlations, and summarized with bubble plots, network graphs, and forest plots.
-
-
-![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
-
 ### 4. Manuscript-oriented outputs
 
 The repository includes figure assets and text files that can be directly referenced when preparing or revising the manuscript.
@@ -195,24 +187,33 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 
 ## Figure Preview
 
-### Main association summary
+The figure layout below follows the sequencing used in the revised manuscript, moving from covariate-adjusted retinal screening to multimodal lipid-retina association summaries.
 
-[Age- and sex-adjusted fundus overview (PDF)](Fig_1_age_sex_fundus.pdf)
+### Figure 1. Covariate-adjusted retinal screening
+
+[Open PDF](Fig_1_age_sex_fundus.pdf)
 
 ![Preview of age- and sex-adjusted fundus overview](preview_images/Fig_1_age_sex_fundus.png)
 
+This figure corresponds to the revised manuscript's initial screening stage, where 18 retinal microvascular traits were evaluated against age with sex included as a covariate. Based on statistical significance, effect-size thresholding, and visual interpretability, six key arterial and venous features were prioritized for downstream multimodal analysis.
+
+### Figure 3. Top 30 lipid-retina associations
+
 ![Bubble plot of top fundus-lipid associations](Final_bubble_plot.png)
 
-![Forest plot of top ranked associations](Final_forest_plot.png)
+This bubble plot summarizes partial correlations between 30 lipid species and 10 retinal features after adjusting for age and sex. Bubble size reflects effect magnitude, and the revised manuscript highlights arterial traits, especially artery average width, artery vessel density, and vessel density, as the strongest hubs of lipid sensitivity.
 
+### Figure 4. Count of significant lipid associations per fundus feature
 
-[Fundus-lipid association barplot (PDF)](fundus_lipid_association_barplot.pdf)
+[Open PDF](fundus_lipid_association_barplot.pdf)
 
 ![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
 
-![Network graph of significant fundus-lipid relationships](Network_graphs.png)
+This barplot complements the bubble plot by quantifying how many lipid species remained significantly associated with each fundus trait after multiple-testing correction. In the revised manuscript, artery average width emerged as the most lipid-associated retinal feature.
 
-### Feature-specific panels
+### Figures 5-9. Feature-focused and network views
+
+![Network graph of significant fundus-lipid relationships](Network_graphs.png)
 
 ![Artery average width](Final_Artery_average_width.png)
 
@@ -222,7 +223,15 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 
 ![Vessel density](Final_vessel_density.png)
 
-See [`FIGURE_MANIFEST.md`](FIGURE_MANIFEST.md) for a manuscript-facing mapping of figure files to analytical roles.
+These visualizations expand the main association results into feature-centered views. The revised manuscript uses them to show that the strongest signals cluster around a small set of retinal microvascular traits, with network plots highlighting significant links to lipid species and feature-specific panels making the dominant retinal hubs easier to interpret.
+
+### Figure 10. Ranked summary of top significant associations
+
+![Forest plot of top ranked associations](Final_forest_plot.png)
+
+This forest plot displays the strongest age/sex-adjusted fundus-lipid associations ranked by partial correlation magnitude with 95% confidence intervals. In the revised manuscript, artery-based features dominate the strongest negative associations, particularly with TAG and DAG lipid classes.
+
+See [`FIGURE_MANIFEST.md`](FIGURE_MANIFEST.md) for a file-by-file mapping of repository figures to their analytical role.
 
 ---
 
