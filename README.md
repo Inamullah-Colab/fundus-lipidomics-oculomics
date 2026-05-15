@@ -56,6 +56,8 @@ fundus-lipidomics-oculomics/
 |   |-- 01_hpp_fundus_preprocessing.md
 |   |-- 02_age_sex_covariate_adjustment.md
 |   `-- 03_fundus_lipid_integration.md
+|-- examples/
+|   `-- README.md
 |-- CODE_AVAILABILITY.md
 |-- REPRODUCIBILITY.md
 |-- FIGURE_MANIFEST.md
@@ -69,6 +71,7 @@ Main analysis scripts:
 - [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py)
 - [`src/02_age_sex_covariate_adjustment.py`](src/02_age_sex_covariate_adjustment.py)
 - [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py)
+- [`examples/README.md`](examples/README.md)
 
 ---
 
@@ -176,6 +179,8 @@ Primary outputs:
 - bubble plot PNG/PDF
 - network graph PNG/PDF
 - forest plot PNG/PDF
+
+For a compact reviewer-facing run guide, see [`examples/README.md`](examples/README.md).
 
 ---
 
