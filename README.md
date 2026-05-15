@@ -1,12 +1,21 @@
 # Integrated Oculomics and Lipidomics Analysis Code
 
-This repository contains the code fragments and figure assets used for the revised manuscript:
+This repository contains the analysis code and public figure assets used for the revised manuscript:
 
 **Integrated Oculomics and Lipidomics Reveal Microvascular-Metabolic Signatures Associated with Cardiovascular Health in a Healthy Cohort**
 
 The analysis is based on secondary Human Phenotype Project (HPP) data accessed through the secure Pheno.AI Trusted Research Environment (TRE). The code here is intended to support reproducibility of the reported exploratory association analyses and figure generation. Because the study is observational and cross-sectional, outputs should be interpreted as covariate-adjusted associations rather than causal effects.
 
 This repository is structured to support a journal `Code availability` statement and to make the computational workflow easier to inspect during peer review.
+
+## Repository purpose
+
+This public repository is intended to provide:
+
+- the core Python scripts used for preprocessing, covariate adjustment, and multimodal integration,
+- the public figure assets used to summarise the reported findings,
+- manuscript-facing documentation for code availability and reproducibility,
+- a transparent description of what can and cannot be reproduced outside the TRE.
 
 ## Code overview
 
@@ -18,6 +27,22 @@ The full public workflow is organised into three code stages:
    Quantify age-feature associations while adjusting for sex and generate exploratory retinal plots.
 3. [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py)
    Merge fundus and lipidomics features, run age/sex-adjusted partial correlations, and generate the main association figures.
+
+## Quick start
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the three stages in order once the required controlled-access input files are available:
+
+```bash
+python src/01_preprocess_hpp_fundus.py
+python src/02_age_sex_covariate_adjustment.py
+python src/03_fundus_lipid_integration.py
+```
 
 ## Repository layout
 
@@ -50,6 +75,10 @@ The scripts assume access to HPP-derived tabular exports and do not redistribute
 - `fundus_age.csv`
 - `fundus_avg.csv`
 - `lipids_age.csv`
+
+## Reproducibility scope
+
+This repository makes the analytic workflow inspectable, but full end-to-end reruns depend on controlled-access HPP data and the TRE environment. For that reason, the repository should be read as a transparent implementation archive for association analyses rather than as an unrestricted public data package.
 
 ## Figures in this folder
 
@@ -89,25 +118,6 @@ See `FIGURE_MANIFEST.md` for a manuscript-facing summary of these assets.
 
 ![Vessel density](Final_vessel_density.png)
 
-## Software dependencies
-
-The scripts use standard Python scientific packages:
-
-- `pandas`
-- `numpy`
-- `matplotlib`
-- `seaborn`
-- `pingouin`
-- `networkx`
-- `statsmodels`
-- `pheno_utils`
-
-Install them with:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Data access
 
 The Human Phenotype Project data are controlled-access. According to the Pheno.AI knowledgebase, users work inside a Trusted Research Environment and can install packages in Jupyter with commands such as `!pip3 install <package name>`. Researchers seeking data access should apply through the official HPP / Pheno.AI process:
@@ -116,17 +126,15 @@ The Human Phenotype Project data are controlled-access. According to the Pheno.A
 - https://knowledgebase.pheno.ai
 - https://humanphenotypeproject.org
 
-## Recommended repository naming
+## Manuscript-facing files
 
-For a dedicated public GitHub repository, a clear name would be one of:
+- [`CODE_AVAILABILITY.md`](CODE_AVAILABILITY.md)
+  Suggested wording for the manuscript `Code availability` section.
+- [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
+  Summary of what readers can inspect and what remains controlled-access.
+- [`FIGURE_MANIFEST.md`](FIGURE_MANIFEST.md)
+  Mapping between repository figure files and their analytical role.
 
-- `fundus-lipidomics-oculomics`
-- `hpp-fundus-lipidomics-analysis`
-- `oculomics-lipidomics-cvd-signatures`
+## Important note
 
-## Notes for manuscript revision
-
-- The code in this repository supports reproducibility of the reported analyses and figure generation.
-- The manuscript should include a `Code availability` heading in the Methods section.
-- Claims in the manuscript should remain framed as associations derived from secondary cross-sectional data.
-- The unpublished revised manuscript file is intentionally excluded from the public repository.
+The unpublished revised manuscript itself is intentionally excluded from the public repository.
