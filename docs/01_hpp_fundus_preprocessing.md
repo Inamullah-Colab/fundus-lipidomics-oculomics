@@ -8,7 +8,7 @@ This step prepares the Human Phenotype Project fundus dataset for downstream ana
 - inspect the available fundus and demographic fields,
 - export the raw table to CSV for local processing inside the TRE,
 - drop non-analytic columns, and
-- average left/right eye measures into a single participant-level feature table.
+- average corresponding left/right eye measures into a single derived fundus feature table.
 
 ## Data source context
 
@@ -25,7 +25,7 @@ Reference:
 3. Export the full dataset to `full_fundus.csv`.
 4. Remove dataset-specific columns that are not needed for the analysis.
 5. Identify matching `*_left` and `*_right` fundus columns.
-6. Compute participant-level averages:
+6. Compute left/right eye averages for corresponding fundus features:
 
 ```python
 df2[base_name] = (df2[left] + df2[right]) / 2
@@ -36,7 +36,7 @@ df2[base_name] = (df2[left] + df2[right]) / 2
 
 ## Output
 
-- `fundus_avg.csv`: participant-level fundus table used for the later covariate-adjustment and multimodal integration steps.
+- `fundus_avg.csv`: derived fundus table used for the later covariate-adjustment and multimodal integration steps.
 
 ## File
 

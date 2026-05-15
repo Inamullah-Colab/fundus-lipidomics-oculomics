@@ -4,7 +4,7 @@ This step merges the fundus and lipidomics tables and tests pairwise association
 
 ## Purpose
 
-- combine participant-level retinal and lipidomic features,
+- combine fundus-derived retinal features and lipidomic features,
 - estimate direct fundus-lipid relationships independent of age and sex,
 - apply FDR correction across the full set of pairwise tests,
 - generate publication figures for interpretation of the strongest associations.

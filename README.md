@@ -30,7 +30,7 @@
 
 | Stage | Purpose | Main file |
 |---|---|---|
-| 1. Fundus preprocessing | Harmonize participant-level retinal variables and derive averaged eye-level features | [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py) |
+| 1. Fundus preprocessing | Prepare retinal variables and average corresponding left/right eye features | [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py) |
 | 2. Covariate-adjusted retinal analysis | Screen retinal traits against age while adjusting for sex | [`src/02_age_sex_covariate_adjustment.py`](src/02_age_sex_covariate_adjustment.py) |
 | 3. Fundus-lipid integration | Quantify age/sex-adjusted lipid-retina associations and generate summary figures | [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py) |
 | 4. Reviewer-facing documentation | Provide reproducibility notes, figure mapping, and example runs | [`examples/README.md`](examples/README.md) |
@@ -38,7 +38,7 @@
 ### Key Capabilities
 
 **Fundus preprocessing**  
-Participant-level retinal measurements are prepared from HPP exports, including left/right eye harmonization and creation of averaged fundus features.
+Retinal variables are prepared from HPP exports, including left/right eye harmonization and creation of averaged fundus features.
 
 **Covariate-adjusted retinal analysis**  
 Fundus traits are tested against age while adjusting for sex using partial Pearson correlation, followed by FDR correction and visual summary panels.
