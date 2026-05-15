@@ -6,7 +6,7 @@ Official analysis repository for the revised manuscript:
 
 This repository contains the public code and figure assets used to support the manuscript's computational workflow. The analysis is based on secondary Human Phenotype Project (HPP) data accessed through the secure Pheno.AI Trusted Research Environment (TRE). Because the study is observational and cross-sectional, outputs should be interpreted as age/sex-adjusted associations rather than causal effects.
 
-This repository is structured to support journal `Code availability` requirements and to make the analysis workflow easy to inspect during peer review.
+This repository is structured to make the analysis workflow easy to inspect during peer review.
 
 ---
 
@@ -38,7 +38,7 @@ Fundus and lipidomics features are merged on participant identifier, tested usin
 
 ### 4. Manuscript-oriented outputs
 
-The repository includes figure assets and text files that can be directly referenced when preparing or revising the manuscript `Code availability` section.
+The repository includes figure assets and text files that can be directly referenced when preparing or revising the manuscript.
 
 ---
 
@@ -188,11 +188,15 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 
 ### Main association summary
 
+[Age- and sex-adjusted fundus overview (PDF)](Fig_1_age_sex_fundus.pdf)
+
 ![Bubble plot of top fundus-lipid associations](Final_bubble_plot.png)
 
 ![Forest plot of top ranked associations](Final_forest_plot.png)
 
 ![Network graph of significant fundus-lipid relationships](Network_graphs.png)
+
+[Fundus-lipid association barplot (PDF)](fundus_lipid_association_barplot.pdf)
 
 ### Feature-specific panels
 
@@ -234,9 +238,3 @@ Additional manuscript-facing notes:
 ## Citation
 
 If you use this repository, please cite the associated manuscript and software record described in [`CITATION.cff`](CITATION.cff).
-
----
-
-## Important Note
-
-The unpublished revised manuscript itself is intentionally excluded from the public repository.

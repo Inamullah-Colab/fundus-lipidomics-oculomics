@@ -3,10 +3,8 @@ message: "If you use this repository, please cite the associated manuscript."
 title: "Integrated Oculomics and Lipidomics Analysis Code"
 type: software
 authors:
-  - family-names: "Inamullah"
-    given-names: ""
-  - family-names: "Vidal Rosas"
-    given-names: "Ernesto Elias"
+  - family-names: "Rosas"
+    given-names: "Ernesto Elias Vidal"
   - family-names: "Razzak"
     given-names: "Imran"
   - family-names: "Jameel"
@@ -19,4 +17,18 @@ keywords:
   - retinal imaging
   - fundus
   - cardiovascular health
+preferred-citation:
+  type: article
+  title: "Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health in a Healthy Cohort"
+  authors:
+    - family-names: "Rosas"
+      given-names: "Ernesto Elias Vidal"
+    - family-names: "Razzak"
+      given-names: "Imran"
+    - family-names: "Jameel"
+      given-names: "Shoaib"
+    - name: "others"
+  journal: "arXiv preprint arXiv:2507.12663"
+  year: 2025
+  url: "https://arxiv.org/abs/2507.12663"
 license: "SEE LICENSE IN FUTURE REPOSITORY SETUP"
