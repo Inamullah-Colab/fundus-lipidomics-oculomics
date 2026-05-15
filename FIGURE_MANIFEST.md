@@ -31,8 +31,3 @@ This file maps the current figure assets in the repository to their analytical r
   Focused panel for vein average width.
 - `Final_vessel_density.png`
   Focused panel for vessel density.
-
-## Manuscript working file
-
-- `Final_Draft_of_second_paper_Revised__Copy_.pdf`
-  Internal revised manuscript copy included here for alignment of code, figure references, and revision language.

@@ -8,6 +8,17 @@ The analysis is based on secondary Human Phenotype Project (HPP) data accessed t
 
 This repository is structured to support a journal `Code availability` statement and to make the computational workflow easier to inspect during peer review.
 
+## Code overview
+
+The full public workflow is organised into three code stages:
+
+1. [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py)
+   Extract HPP fundus data inside the TRE, clean fields, and average left/right eye measures.
+2. [`src/02_age_sex_covariate_adjustment.py`](src/02_age_sex_covariate_adjustment.py)
+   Quantify age-feature associations while adjusting for sex and generate exploratory retinal plots.
+3. [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py)
+   Merge fundus and lipidomics features, run age/sex-adjusted partial correlations, and generate the main association figures.
+
 ## Repository layout
 
 - `src/01_preprocess_hpp_fundus.py`
@@ -58,6 +69,26 @@ The scripts assume access to HPP-derived tabular exports and do not redistribute
 
 See `FIGURE_MANIFEST.md` for a manuscript-facing summary of these assets.
 
+## Figure preview
+
+### Main association summary
+
+![Bubble plot of top fundus-lipid associations](Final_bubble_plot.png)
+
+![Forest plot of top ranked associations](Final_forest_plot.png)
+
+![Network graph of significant fundus-lipid relationships](Network_graphs.png)
+
+### Feature-specific panels
+
+![Artery average width](Final_Artery_average_width.png)
+
+![Artery vessel density](Final_artery_vessel_density.png)
+
+![Vein average width](Final_vein_average_width.png)
+
+![Vessel density](Final_vessel_density.png)
+
 ## Software dependencies
 
 The scripts use standard Python scientific packages:
@@ -98,3 +129,4 @@ For a dedicated public GitHub repository, a clear name would be one of:
 - The code in this repository supports reproducibility of the reported analyses and figure generation.
 - The manuscript should include a `Code availability` heading in the Methods section.
 - Claims in the manuscript should remain framed as associations derived from secondary cross-sectional data.
+- The unpublished revised manuscript file is intentionally excluded from the public repository.
