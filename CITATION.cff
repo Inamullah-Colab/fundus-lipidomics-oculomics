@@ -11,7 +11,7 @@ authors:
     given-names: "Imran"
   - family-names: "Jameel"
     given-names: "Shoaib"
-repository-code: "https://github.com/Inamullah-Colab/REPLACE_WITH_FINAL_REPO"
+repository-code: "https://github.com/Inamullah-Colab/fundus-lipidomics-oculomics"
 abstract: "Code and figure-generation workflow for covariate-adjusted integration of retinal fundus phenotypes and serum lipidomics in the Human Phenotype Project."
 keywords:
   - oculomics
