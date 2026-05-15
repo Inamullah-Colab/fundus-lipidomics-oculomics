@@ -1,104 +1,185 @@
 # Integrated Oculomics and Lipidomics Analysis Code
 
-This repository contains the analysis code and public figure assets used for the revised manuscript:
+Official analysis repository for the revised manuscript:
 
 **Integrated Oculomics and Lipidomics Reveal Microvascular-Metabolic Signatures Associated with Cardiovascular Health in a Healthy Cohort**
 
-The analysis is based on secondary Human Phenotype Project (HPP) data accessed through the secure Pheno.AI Trusted Research Environment (TRE). The code here is intended to support reproducibility of the reported exploratory association analyses and figure generation. Because the study is observational and cross-sectional, outputs should be interpreted as covariate-adjusted associations rather than causal effects.
+This repository contains the public code and figure assets used to support the manuscript's computational workflow. The analysis is based on secondary Human Phenotype Project (HPP) data accessed through the secure Pheno.AI Trusted Research Environment (TRE). Because the study is observational and cross-sectional, outputs should be interpreted as age/sex-adjusted associations rather than causal effects.
 
-This repository is structured to support a journal `Code availability` statement and to make the computational workflow easier to inspect during peer review.
+This repository is structured to support journal `Code availability` requirements and to make the analysis workflow easy to inspect during peer review.
 
-## Repository purpose
+---
 
-This public repository is intended to provide:
+## Overview
 
-- the core Python scripts used for preprocessing, covariate adjustment, and multimodal integration,
-- the public figure assets used to summarise the reported findings,
-- manuscript-facing documentation for code availability and reproducibility,
-- a transparent description of what can and cannot be reproduced outside the TRE.
+The repository provides:
 
-## Code overview
+- preprocessing code for HPP fundus data,
+- age- and sex-adjusted retinal feature analysis,
+- fundus-lipidomics integration code,
+- figure-generation scripts and public figure assets,
+- manuscript-facing documentation for code availability and reproducibility.
 
-The full public workflow is organised into three code stages:
+---
 
-1. [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py)
-   Extract HPP fundus data inside the TRE, clean fields, and average left/right eye measures.
-2. [`src/02_age_sex_covariate_adjustment.py`](src/02_age_sex_covariate_adjustment.py)
-   Quantify age-feature associations while adjusting for sex and generate exploratory retinal plots.
-3. [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py)
-   Merge fundus and lipidomics features, run age/sex-adjusted partial correlations, and generate the main association figures.
+## Key Capabilities
 
-## Quick start
+### 1. Fundus preprocessing
 
-Install dependencies:
+Participant-level retinal measurements are prepared from HPP exports, including left/right eye harmonization and creation of averaged fundus features.
 
-```bash
-pip install -r requirements.txt
+### 2. Covariate-adjusted retinal analysis
+
+Fundus traits are tested against age while adjusting for sex using partial Pearson correlation, followed by FDR correction and visual summary panels.
+
+### 3. Fundus-lipid integration
+
+Fundus and lipidomics features are merged on participant identifier, tested using age/sex-adjusted partial correlations, and summarized with bubble plots, network graphs, and forest plots.
+
+### 4. Manuscript-oriented outputs
+
+The repository includes figure assets and text files that can be directly referenced when preparing or revising the manuscript `Code availability` section.
+
+---
+
+## Repository Structure
+
+The codebase is organized into modular components reflecting the workflow described in the manuscript:
+
+```text
+fundus-lipidomics-oculomics/
+|-- src/
+|   |-- 01_preprocess_hpp_fundus.py
+|   |-- 02_age_sex_covariate_adjustment.py
+|   `-- 03_fundus_lipid_integration.py
+|-- docs/
+|   |-- 01_hpp_fundus_preprocessing.md
+|   |-- 02_age_sex_covariate_adjustment.md
+|   `-- 03_fundus_lipid_integration.md
+|-- CODE_AVAILABILITY.md
+|-- REPRODUCIBILITY.md
+|-- FIGURE_MANIFEST.md
+|-- CITATION.cff
+|-- requirements.txt
+`-- README.md
 ```
 
-Run the three stages in order once the required controlled-access input files are available:
+Main analysis scripts:
 
-```bash
-python src/01_preprocess_hpp_fundus.py
-python src/02_age_sex_covariate_adjustment.py
-python src/03_fundus_lipid_integration.py
-```
+- [`src/01_preprocess_hpp_fundus.py`](src/01_preprocess_hpp_fundus.py)
+- [`src/02_age_sex_covariate_adjustment.py`](src/02_age_sex_covariate_adjustment.py)
+- [`src/03_fundus_lipid_integration.py`](src/03_fundus_lipid_integration.py)
 
-## Repository layout
+---
 
-- `src/01_preprocess_hpp_fundus.py`
-  HPP/TRE preprocessing for the fundus dataset, including export and left-right eye averaging.
-- `src/02_age_sex_covariate_adjustment.py`
-  Partial-correlation screening of fundus features against age while adjusting for sex, plus age-density and sex-stratified plots.
-- `src/03_fundus_lipid_integration.py`
-  Integration of fundus and lipidomics tables with age/sex-adjusted partial correlations, FDR correction, bubble plots, network graphs, and forest plots.
-- `docs/01_hpp_fundus_preprocessing.md`
-  Markdown explanation of the preprocessing stage.
-- `docs/02_age_sex_covariate_adjustment.md`
-  Markdown explanation of the age/sex adjustment stage.
-- `docs/03_fundus_lipid_integration.md`
-  Markdown explanation of the multimodal integration stage.
-- `CODE_AVAILABILITY.md`
-  Text that can be adapted for the manuscript's required `Code availability` section.
-- `CITATION.cff`
-  Citation metadata for the repository.
-- `REPRODUCIBILITY.md`
-  Practical notes on what can and cannot be reproduced outside the TRE.
-- `FIGURE_MANIFEST.md`
-  Mapping between figure files and their role in the manuscript.
+## System Requirements
 
-## Expected inputs
+This codebase was prepared for Python-based scientific analysis and uses:
 
-The scripts assume access to HPP-derived tabular exports and do not redistribute participant-level data.
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `pingouin`
+- `networkx`
+- `statsmodels`
+- `pheno_utils`
+
+The workflow assumes access to HPP-derived tabular data inside the Pheno.AI TRE or to permitted exported derived files.
+
+Expected input files:
 
 - `full_fundus.csv` or direct TRE access through `pheno_utils`
 - `fundus_age.csv`
 - `fundus_avg.csv`
 - `lipids_age.csv`
 
-## Reproducibility scope
+---
 
-This repository makes the analytic workflow inspectable, but full end-to-end reruns depend on controlled-access HPP data and the TRE environment. For that reason, the repository should be read as a transparent implementation archive for association analyses rather than as an unrestricted public data package.
+## Installation
 
-## Figures in this folder
+We recommend using a dedicated Python environment.
 
-- `Fig_1_age_sex_fundus.pdf`
-  Age- and sex-aware exploratory figure for selected fundus features.
-- `Final_bubble_plot.png`
-  Bubble plot of top lipid-fundus associations after FDR correction.
-- `Network_graphs.png`
-  Network view of significant lipid-fundus relationships.
-- `Final_forest_plot.png`
-  Ranked association summary with confidence intervals.
-- `Final_Artery_average_width.png`
-- `Final_artery_vessel_density.png`
-- `Final_vein_average_width.png`
-- `Final_vessel_density.png`
-- `fundus_lipid_association_barplot.pdf`
+### 1. Clone the repository
 
-See `FIGURE_MANIFEST.md` for a manuscript-facing summary of these assets.
+```bash
+git clone https://github.com/Inamullah-Colab/fundus-lipidomics-oculomics.git
+cd fundus-lipidomics-oculomics
+```
 
-## Figure preview
+### 2. Create and activate an environment
+
+Using Conda:
+
+```bash
+conda create -n fundus_lipidomics python=3.10
+conda activate fundus_lipidomics
+```
+
+Using `venv`:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+The workflow consists of three main stages.
+
+### Step 1. Preprocess HPP fundus data
+
+This script loads fundus data inside the TRE, removes non-analytic columns, averages left/right eye measures, and writes participant-level fundus outputs.
+
+```bash
+python src/01_preprocess_hpp_fundus.py
+```
+
+Primary outputs:
+
+- `fundus_age.csv`
+- `fundus_avg.csv`
+
+### Step 2. Adjust retinal features for age and sex
+
+This script computes partial correlations between age and retinal features while adjusting for sex, applies Benjamini-Hochberg FDR correction, and generates exploratory figure panels.
+
+```bash
+python src/02_age_sex_covariate_adjustment.py
+```
+
+Primary outputs:
+
+- `fundus_age_sex_partial_corr_results_fdr.csv`
+- `fundus_age_features_plot.png`
+- `fundus_age_features_plot.pdf`
+
+### Step 3. Integrate fundus and lipidomics features
+
+This script merges the retinal and lipidomics tables, runs age/sex-adjusted partial correlations for all feature pairs, and generates the main manuscript-style summary figures.
+
+```bash
+python src/03_fundus_lipid_integration.py
+```
+
+Primary outputs:
+
+- `fundus_lipid_partial_correlations_fdr.csv`
+- bubble plot PNG/PDF
+- network graph PNG/PDF
+- forest plot PNG/PDF
+
+---
+
+## Figure Preview
 
 ### Main association summary
 
@@ -118,23 +199,39 @@ See `FIGURE_MANIFEST.md` for a manuscript-facing summary of these assets.
 
 ![Vessel density](Final_vessel_density.png)
 
-## Data access
+See [`FIGURE_MANIFEST.md`](FIGURE_MANIFEST.md) for a manuscript-facing mapping of figure files to analytical roles.
 
-The Human Phenotype Project data are controlled-access. According to the Pheno.AI knowledgebase, users work inside a Trusted Research Environment and can install packages in Jupyter with commands such as `!pip3 install <package name>`. Researchers seeking data access should apply through the official HPP / Pheno.AI process:
+---
+
+## Data Access
+
+The Human Phenotype Project data are controlled-access and are not redistributed through this repository. According to the Pheno.AI documentation, researchers work inside a Trusted Research Environment and can install required Python packages within that environment as needed.
+
+Official resources:
 
 - https://knowledgebase.pheno.ai/platform_tutorial.html
 - https://knowledgebase.pheno.ai
 - https://humanphenotypeproject.org
 
-## Manuscript-facing files
+---
+
+## Reproducibility Scope
+
+This repository makes the analytic workflow inspectable, but complete end-to-end reproduction depends on controlled-access HPP data and TRE permissions. It should therefore be interpreted as a transparent implementation archive for association analyses, not as an unrestricted public data package.
+
+Additional manuscript-facing notes:
 
 - [`CODE_AVAILABILITY.md`](CODE_AVAILABILITY.md)
-  Suggested wording for the manuscript `Code availability` section.
 - [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
-  Summary of what readers can inspect and what remains controlled-access.
-- [`FIGURE_MANIFEST.md`](FIGURE_MANIFEST.md)
-  Mapping between repository figure files and their analytical role.
 
-## Important note
+---
+
+## Citation
+
+If you use this repository, please cite the associated manuscript and software record described in [`CITATION.cff`](CITATION.cff).
+
+---
+
+## Important Note
 
 The unpublished revised manuscript itself is intentionally excluded from the public repository.
