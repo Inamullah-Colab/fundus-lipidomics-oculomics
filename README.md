@@ -32,9 +32,17 @@ Participant-level retinal measurements are prepared from HPP exports, including 
 
 Fundus traits are tested against age while adjusting for sex using partial Pearson correlation, followed by FDR correction and visual summary panels.
 
+[Open PDF](Fig_1_age_sex_fundus.pdf)
+
+![Preview of age- and sex-adjusted fundus figure](preview_images/Fig_1_age_sex_fundus.png)
+
 ### 3. Fundus-lipid integration
 
 Fundus and lipidomics features are merged on participant identifier, tested using age/sex-adjusted partial correlations, and summarized with bubble plots, network graphs, and forest plots.
+
+[Open PDF barplot](fundus_lipid_association_barplot.pdf)
+
+![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
 
 ### 4. Manuscript-oriented outputs
 
@@ -58,6 +66,9 @@ fundus-lipidomics-oculomics/
 |   `-- 03_fundus_lipid_integration.md
 |-- examples/
 |   `-- README.md
+|-- preview_images/
+|   |-- Fig_1_age_sex_fundus.png
+|   `-- fundus_lipid_association_barplot.png
 |-- CODE_AVAILABILITY.md
 |-- REPRODUCIBILITY.md
 |-- FIGURE_MANIFEST.md
@@ -190,6 +201,8 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 
 [Age- and sex-adjusted fundus overview (PDF)](Fig_1_age_sex_fundus.pdf)
 
+![Preview of age- and sex-adjusted fundus overview](preview_images/Fig_1_age_sex_fundus.png)
+
 ![Bubble plot of top fundus-lipid associations](Final_bubble_plot.png)
 
 ![Forest plot of top ranked associations](Final_forest_plot.png)
@@ -197,6 +210,8 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 ![Network graph of significant fundus-lipid relationships](Network_graphs.png)
 
 [Fundus-lipid association barplot (PDF)](fundus_lipid_association_barplot.pdf)
+
+![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
 
 ### Feature-specific panels
 
