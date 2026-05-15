@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated manuscript."
+title: "Integrated Oculomics and Lipidomics Analysis Code"
+type: software
+authors:
+  - family-names: "Inamullah"
+    given-names: ""
+  - family-names: "Vidal Rosas"
+    given-names: "Ernesto Elias"
+  - family-names: "Razzak"
+    given-names: "Imran"
+  - family-names: "Jameel"
+    given-names: "Shoaib"
+repository-code: "https://github.com/Inamullah-Colab/REPLACE_WITH_FINAL_REPO"
+abstract: "Code and figure-generation workflow for covariate-adjusted integration of retinal fundus phenotypes and serum lipidomics in the Human Phenotype Project."
+keywords:
+  - oculomics
+  - lipidomics
+  - retinal imaging
+  - fundus
+  - cardiovascular health
+license: "SEE LICENSE IN FUTURE REPOSITORY SETUP"
