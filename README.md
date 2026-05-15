@@ -32,7 +32,6 @@ Participant-level retinal measurements are prepared from HPP exports, including 
 
 Fundus traits are tested against age while adjusting for sex using partial Pearson correlation, followed by FDR correction and visual summary panels.
 
-[Open PDF](Fig_1_age_sex_fundus.pdf)
 
 ![Preview of age- and sex-adjusted fundus figure](preview_images/Fig_1_age_sex_fundus.png)
 
@@ -40,7 +39,6 @@ Fundus traits are tested against age while adjusting for sex using partial Pears
 
 Fundus and lipidomics features are merged on participant identifier, tested using age/sex-adjusted partial correlations, and summarized with bubble plots, network graphs, and forest plots.
 
-[Open PDF barplot](fundus_lipid_association_barplot.pdf)
 
 ![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
 
@@ -207,11 +205,12 @@ For a compact reviewer-facing run guide, see [`examples/README.md`](examples/REA
 
 ![Forest plot of top ranked associations](Final_forest_plot.png)
 
-![Network graph of significant fundus-lipid relationships](Network_graphs.png)
 
 [Fundus-lipid association barplot (PDF)](fundus_lipid_association_barplot.pdf)
 
 ![Preview of fundus-lipid association barplot](preview_images/fundus_lipid_association_barplot.png)
+
+![Network graph of significant fundus-lipid relationships](Network_graphs.png)
 
 ### Feature-specific panels
 
