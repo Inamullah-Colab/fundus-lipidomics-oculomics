@@ -123,7 +123,7 @@ def main() -> None:
     plot_age_sex_panels(df, top_features, results_df)
 
     sig_features = results_df[results_df["significant_fdr"]].copy()
-    sig_features = sig_features[sig_features["r"].abs() >= 0.2]
+    sig_features = sig_features[sig_features["r"].abs() >= 0.1]
     print(sig_features[["feature", "r", "p_fdr"]])
 
 
