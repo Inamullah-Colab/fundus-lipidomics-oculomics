@@ -1,34 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the associated manuscript."
-title: "Integrated Oculomics and Lipidomics Analysis Code"
-type: software
+message: "If you use this software, please cite it as below."
+title: "Code for Integrated Oculomics and Lipidomics Study"
+version: "v1.0.1"
+date-released: 2026-07-14
 authors:
-  - family-names: "Rosas"
-    given-names: "Ernesto Elias Vidal"
-  - family-names: "Razzak"
-    given-names: "Imran"
+  - family-names: "Ullah"
+    given-names: "Inam"
   - family-names: "Jameel"
     given-names: "Shoaib"
+  - family-names: "Vidal Rosas"
+    given-names: "Ernesto Elias"
+  - family-names: "Razzak"
+    given-names: "Imran"
 repository-code: "https://github.com/Inamullah-Colab/fundus-lipidomics-oculomics"
-abstract: "Code and figure-generation workflow for covariate-adjusted integration of retinal fundus phenotypes and serum lipidomics in the Human Phenotype Project."
+abstract: "Custom analysis code used for retinal feature screening, age- and sex-adjusted partial correlation analysis, Benjamini-Hochberg false discovery rate correction, and visualisation for an integrated retinal oculomics and lipidomics study."
 keywords:
-  - oculomics
+  - Retinal imaging
+  - Microvasculature
+  - Oculomics
   - lipidomics
-  - retinal imaging
-  - fundus
-  - cardiovascular health
-preferred-citation:
-  type: article
-  title: "Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health in a Healthy Cohort"
-  authors:
-    - family-names: "Rosas"
-      given-names: "Ernesto Elias Vidal"
-    - family-names: "Razzak"
-      given-names: "Imran"
-    - family-names: "Jameel"
-      given-names: "Shoaib"
-    - name: "others"
-  journal: "arXiv preprint arXiv:2507.12663"
-  year: 2025
-  url: "https://arxiv.org/abs/2507.12663"
-license: "SEE LICENSE IN FUTURE REPOSITORY SETUP"
+  - cardiovascular disease
+  - Biomarkers
+license: MIT
